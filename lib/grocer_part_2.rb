@@ -1,5 +1,6 @@
 require_relative './part_1_solution.rb'
 
+<<<<<<< HEAD
 unconsolidated_cart = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true},
   {:item => "AVOCADO", :price => 3.00, :clearance => true},
@@ -17,6 +18,12 @@ consolidated_cart = [
   {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
   {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1},
   {:item => "BEETS",  :price => 6.66, :clearance => true, :count => 5}
+=======
+consolidated_cart = [
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1},
+  {:item => "BEETS",  :price => 3.00, :clearance => false, :count => 5}
+>>>>>>> 95009b7e47ba3f2f1b683a8cbf0622f47aa85dc6
 ]
 
 coupons_clipped = [
@@ -54,7 +61,11 @@ def apply_coupons(cart, coupons)
     
  end
  cart.concat discounts # adds all the discounted items to the cart
+<<<<<<< HEAD
  #p cart
+=======
+ p cart
+>>>>>>> 95009b7e47ba3f2f1b683a8cbf0622f47aa85dc6
  cart
 end
     
@@ -62,6 +73,7 @@ end
 
 def apply_clearance(cart)
   cart.each do | cart_item |
+<<<<<<< HEAD
     if cart_item[:clearance]
      cart_item[:price] = (cart_item[:price] - (cart_item[:price] * 0.2)).round(2)
     end 
@@ -71,6 +83,15 @@ def apply_clearance(cart)
 end
 
 # apply_clearance(consolidated_cart)
+=======
+    p cart_item[:item] + " " + cart_item[:price].to_s
+  end
+  p "***"
+  p cart
+end
+
+apply_clearance(consolidated_cart)
+>>>>>>> 95009b7e47ba3f2f1b683a8cbf0622f47aa85dc6
 
 def checkout(cart, coupons)
   total = 0
